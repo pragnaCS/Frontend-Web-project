@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Portal</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="../src/output.css">
+    <link rel="icon" href=https://upload.wikimedia.org/wikipedia/en/b/b0/St._Xavier%27s_College%2C_Kolkata_logo.jpg type="image/jpg">
+
+
+</head>
+
+<body class="bg-gray-100 font-sans transition-all duration-500">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="bg-slate-900 text-white shadow-xl sticky top-0 z-50">
+
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <!-- Logo -->
+            <h1 class="text-3xl font-extrabold tracking-wide">
+                Student Portal
+            </h1>
+
+            <!-- Menu -->
+            <ul class="md:flex gap-8 text-lg font-medium items-center">
+
+                <li>
+                    <a href="Home.html"
+                        class="menu hover:text-blue-400 duration-300">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="RegistrationForm.html"
+                        class="menu hover:text-blue-400 duration-300">
+                        Admission
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Table.html"
+                        class="menu hover:text-blue-400 duration-300">
+                        Student Table
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#"
+                        class="menu hover:text-blue-400 duration-300">
+                        Contact Us
+                    </a>
+                </li>
+
+                <!-- Dark Mode Button -->
+                <button id="darkbtn"
+                    class="bg-blue-600 px-5 py-2 rounded-lg hover:bg-blue-700 duration-300">
+
+                    Dark Mode
+
+                </button>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section
+        class="bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-700 text-white py-20">
+
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-14">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="md:w-1/2">
+
+                <!-- Badge -->
+                <span
+                    class="bg-white/20 px-5 py-2 rounded-full text-sm tracking-wide font-semibold">
+
+                    🎓 ADMISSION OPEN 2026
+
+                </span>
+
+                <!-- Heading -->
+                <h1
+                    class="text-5xl md:text-6xl font-extrabold leading-tight mt-6">
+
+                    Welcome to
+
+                    <span class="text-yellow-300">
+                        Student Portal
+                    </span>
+
+                </h1>
+
+                <!-- Paragraph -->
+                <p
+                    class="mt-6 text-lg leading-8 text-gray-200">
+
+                    Manage admissions, student records and registration
+                    easily with our responsive modern portal using
+                    HTML,JavaScript and Tailwind CSS.
+
+                </p>
+
+                <!-- Buttons -->
+                <div class="flex flex-wrap gap-5 mt-8">
+
+                    <button
+                        class="bg-white text-blue-700 px-7 py-3 rounded-xl font-bold hover:scale-105 hover:bg-gray-100 duration-300 shadow-lg">
+
+                        Explore More
+
+                    </button>
+
+                    <button
+                        onclick="window.location.href='RegistrationForm.html'"
+                        class="bg-yellow-400 text-black px-7 py-3 rounded-xl font-bold hover:scale-105 hover:bg-yellow-300 duration-300 shadow-lg">
+
+                        Register Now
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="md:w-1/2">
+
+                <img
+                    src=https://www.collegebatch.com/static/clg-gallery/st-xaviers-college-kolkata-233166.webp          
+                    alt="student image"
+                    class="rounded-3xl shadow-2xl hover:scale-105 duration-500">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="py-20 px-6">
+
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Heading -->
+            <div class="text-center mb-14">
+
+                <h2 class="text-4xl font-extrabold text-gray-500">
+
+                    Why Choose Our Portal?
+
+                </h2>
+
+                <p class="text-gray-600 mt-4 text-lg">
+
+                    Modern responsive student management system.
+
+                </p>
+
+            </div>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 text-center">
+
+                    <div class="text-5xl mb-5">
+                        📚
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-800">
+
+                        Easy Admission
+
+                    </h3>
+
+                    <p class="text-gray-600 mt-4 leading-7">
+
+                        Quick and simple online registration
+                        process for all students.
+
+                    </p>
+
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 text-center">
+
+                    <div class="text-5xl mb-5">
+                        ⚡
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-800">
+
+                        Fast Updates
+
+                    </h3>
+
+                    <p class="text-gray-600 mt-4 leading-7">
+
+                        Get instant notifications and
+                        admission updates easily.
+
+                    </p>
+
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-8 rounded-2xl shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 text-center">
+
+                    <div class="text-5xl mb-5">
+                        🔒
+                    </div>
+
+                    <h3 class="text-2xl font-bold text-gray-800">
+
+                        Secure Portal
+
+                    </h3>
+
+                    <p class="text-gray-600 mt-4 leading-7">
+
+                        Student data and records remain
+                        protected and secure.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= INFORMATION SECTION ================= -->
+
+    <section class="bg-white py-20 px-6">
+
+        <div
+            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <!-- Left -->
+            <div
+                class="bg-blue-50 p-8 rounded-3xl shadow-lg border border-blue-100">
+
+                <h2 class="text-3xl font-bold text-blue-700">
+
+                    📝 Registration Open
+
+                </h2>
+
+                <p class="text-gray-600 mt-5 leading-8 text-lg">
+
+                    Complete your registration carefully to
+                    confirm your admission successfully.
+
+                </p>
+
+                <button
+                    onclick="window.location.href='RegistrationForm.html'"
+                    class="bg-blue-600 text-white px-6 py-3 rounded-xl mt-6 hover:bg-blue-700 duration-300">
+
+                    Fill Form
+
+                </button>
+
+            </div>
+
+            <!-- Right -->
+            <div
+                class="bg-purple-50 p-8 rounded-3xl shadow-lg border border-purple-100">
+
+                <h2 class="text-3xl font-bold text-purple-700">
+
+                    📋 Student Records
+
+                </h2>
+
+                <p class="text-gray-600 mt-5 leading-8 text-lg">
+
+                    View student information and finalized
+                    submissions directly from the student table.
+
+                </p>
+
+                <button
+                    onclick="window.location.href='Table.html'"
+                    class="bg-purple-600 text-white px-6 py-3 rounded-xl mt-6 hover:bg-purple-700 duration-300">
+
+                    View Table
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CTA SECTION ================= -->
+
+    <section
+        class="bg-gradient-to-r from-indigo-700 to-blue-700 py-20 text-center text-white px-6">
+
+        <h2 class="text-4xl md:text-5xl font-extrabold">
+
+            Start Your Learning Journey Today
+
+        </h2>
+
+        <p class="mt-6 text-lg text-gray-200 max-w-2xl mx-auto leading-8">
+
+            Join our student portal and manage everything
+            digitally with a modern responsive interface.
+
+        </p>
+
+        <button
+            onclick="alert('Welcome to Student Portal!')"
+            class="bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold mt-8 hover:scale-105 hover:bg-yellow-300 duration-300 shadow-xl">
+
+            Get Started
+
+        </button>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="bg-slate-900 text-gray-300 py-12">
+
+        <div class="max-w-7xl mx-auto px-6 text-center">
+
+            <h2 class="text-3xl font-extrabold text-white">
+
+                Student Portal
+
+            </h2>
+
+            <p class="mt-4 text-gray-400 text-lg">
+
+                Responsive Modern UI using Tailwind CSS 3
+
+            </p>
+
+            <!-- Footer Links -->
+            <div class="flex justify-center gap-8 mt-6">
+
+                <a href="#"
+                    class="hover:text-white duration-300">
+                    Facebook
+                </a>
+
+                <a href="#"
+                    class="hover:text-white duration-300">
+                    Instagram
+                </a>
+
+                <a href="#"
+                    class="hover:text-white duration-300">
+                    LinkedIn
+                </a>
+
+            </div>
+
+            <p class="mt-8 text-sm text-gray-500">
+
+                © 2026 Web Development Assignment | All Rights Reserved
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // ACTIVE NAVBAR
+
+        let menus = document.querySelectorAll(".menu");
+
+        menus.forEach(function (menu) {
+
+            menu.addEventListener("click", function () {
+
+                menus.forEach(item =>
+                    item.classList.remove("text-blue-400"));
+
+                menu.classList.add("text-blue-400");
+
+            });
+
+        });
+
+        // DARK MODE
+
+        document.getElementById("darkbtn")
+            .addEventListener("click", function () {
+
+                document.body.classList.toggle("bg-gray-900");
+                document.body.classList.toggle("text-white");
+
+            });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration Form</title>
+
+    <!-- Tailwind Output CSS -->
+    <link rel="stylesheet" href="../src/output.css">
+</head>
+
+<body class="bg-gradient-to-r from-sky-200 to-blue-300 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-900 text-white shadow-lg">
+
+        <div class="max-w-6xl mx-auto px-6 py-4">
+
+            <ul class="flex justify-center gap-6 text-lg font-medium">
+                <li>
+                    <a href="Home.html" 
+                    class="hover:text-yellow-300 duration-300">
+                    Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="RegistrationForm.html" 
+                    class="hover:text-yellow-300 duration-300">
+                    Form
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Table.html" 
+                    class="hover:text-yellow-300 duration-300">
+                    Table
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- Form Section -->
+    <div class="flex justify-center items-center py-12 px-4">
+
+        <form action="Table.html"
+        class="bg-white w-full max-w-lg p-8 rounded-2xl shadow-2xl space-y-5">
+
+            <!-- Heading -->
+            <div class="text-center">
+
+                <h2 class="text-4xl font-bold text-blue-900">
+                    Student Registration
+                </h2>
+
+                <p class="text-gray-500 mt-2">
+                    Fill in your details carefully
+                </p>
+
+            </div>
+
+            <!-- Full Name -->
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Full Name
+                </label>
+
+                <input
+                type="text"
+                placeholder="Enter your full name"
+                required
+                class="w-full border border-gray-300 p-3 rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+
+            </div>
+
+            <!-- Date of Birth -->
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Date of Birth
+                </label>
+
+                <input
+                type="date"
+                required
+                class="w-full border border-gray-300 p-3 rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+
+            </div>
+
+            <!-- Gender -->
+            <div>
+
+                <p class="font-semibold mb-2">
+                    Gender
+                </p>
+
+                <div class="flex gap-6">
+
+                    <label class="flex items-center gap-2">
+                        <input
+                        type="radio"
+                        name="gender">
+                        Male
+                    </label>
+
+                    <label class="flex items-center gap-2">
+                        <input
+                        type="radio"
+                        name="gender"
+                        checked>
+                        Female
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- Qualification -->
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Qualification
+                </label>
+
+                <select
+                required
+                class="w-full border border-gray-300 p-3 rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+
+                    <option value="">-- Choose Qualification --</option>
+                    <option>UG</option>
+                    <option>PG</option>
+                    <option>BCA</option>
+                    <option>BBA</option>
+                    <option>12TH</option>
+
+                </select>
+
+            </div>
+
+            <!-- Email -->
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Local Address
+                </label>
+
+                <textarea
+                rows="4"
+                placeholder="Enter your address"
+                class="w-full border border-gray-300 p-3 rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                </textarea>
+
+            </div>
+
+            <!-- Phone Number -->
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Phone Number
+                </label>
+
+                <input
+                type="tel"
+                pattern="[0-9]{10}"
+                placeholder="Enter 10 digit phone number"
+                required
+                title="Please enter a 10 digit number"
+                class="w-full border border-gray-300 p-3 rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+
+            </div>
+
+            <!-- Email Address -->
+            <div>
+            <label class="block font-semibold mb-2">
+            Email Address
+            </label>
+            <input
+            type="email"
+            placeholder="Enter your email"
+            required
+            class="w-full border border-gray-300 p-3 rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+
+            </div>
+
+            <!-- Courses -->
+            <div>
+
+                <p class="font-semibold mb-2">
+                    Choose Course
+                </p>
+
+                <div class="grid grid-cols-2 gap-3">
+
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox">
+                        Java
+                    </label>
+
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox" checked>
+                        HTML
+                    </label>
+
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox">
+                        JavaScript
+                    </label>
+
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox">
+                        PHP
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- Admission Date -->
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Date Of Admission
+                    <span class="text-red-500">*</span>
+                </label>
+
+                <input
+                type="text"
+                pattern="\d{2}/\d{2}/\d{4}"
+                placeholder="dd/mm/yyyy"
+                required
+                class="w-full border border-gray-300 p-3 rounded-lg outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+
+            </div>
+
+            <!-- Submit Button -->
+            <button
+            type="submit"
+            class="bg-blue-900 text-white px-5 py-3 rounded-lg w-full hover:bg-green-800">Submit</button>
+        </form>
+
+    </div>
+
+</body>
+</html>

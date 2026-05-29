@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Modern Portfolio UI</title>
+
+    <!-- Tailwind CSS -->
+   <link rel="stylesheet" href="../src/output.css">
+
+</head>
+
+<body class="bg-gray-100 font-sans transition-all duration-500">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="bg-pink-900 text-white shadow-xl sticky top-0 z-50">
+
+        <div
+            class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+            <!-- Logo -->
+
+            <h1 class="text-3xl font-extrabold">
+                My Portfolio
+            </h1>
+
+            <!-- Menu -->
+
+            <ul class="md:flex gap-8 items-center text-lg">
+
+                <li>
+                    <a href="#"
+                        class="menu hover:text-rose-400 duration-300">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about"
+                        class="menu hover:text-rose-400 duration-300">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#skills"
+                        class="menu hover:text-rose-400 duration-300">
+                        Skills
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact"
+                        class="menu hover:text-rose-400 duration-300">
+                        Contact
+                    </a>
+                </li>
+
+                <!-- Dark Mode Button -->
+
+                <button id="darkbtn"
+                    class="bg-fuchsia-800 px-5 py-2 rounded-lg hover:bg-rose-700 duration-300">
+
+                    Dark Mode
+
+                </button>
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section
+        class="bg-gradient-to-r from-rose-300 via-pink-300 to-rose-700 text-white py-20">
+
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-14">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="md:w-1/2">
+
+                <span
+                    class="bg-white/20 px-5 py-2 rounded-full text-sm font-semibold tracking-wide">
+
+                    🚀 FRONTEND WEB DEVELOPER
+
+                </span>
+
+                <h1
+                    class="text-5xl md:text-6xl font-extrabold leading-tight mt-6">
+
+                    Hello, I'm
+
+                    <span class="text-yellow-300">
+                        Pragna
+                    </span>
+
+                </h1>
+
+                <p
+                    class="mt-6 text-lg leading-8 text-gray-200">
+
+                    Passionate Web Developer and Student creating
+                    modern responsive websites using HTML,
+                    CSS, JavaScript and Tailwind CSS.
+
+                </p>
+
+                <!-- Buttons -->
+
+                <div class="flex flex-wrap gap-5 mt-8">
+
+                    <button
+                        class="bg-white text-blue-700 px-7 py-3 rounded-xl font-bold hover:scale-105 hover:bg-gray-100 duration-300 shadow-xl">
+
+                        Hire Me
+
+                    </button>
+
+                    <button
+                        class="bg-yellow-400 text-black px-7 py-3 rounded-xl font-bold hover:scale-105 hover:bg-yellow-300 duration-300 shadow-xl">
+
+                        Download CV
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="md:w-1/2 flex justify-center"> 
+            <div class="bg-white/10 backdrop-blur-lg p-4 rounded-[40px] shadow-2xl"> 
+            <img 
+            src="ME.jpeg" alt="portfolio image" class="w-[350px] h-[450px] object-cover object-top rounded-[30px] hover:scale-105 duration-500"> 
+            </div> 
+            </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+
+    <section id="about"
+        class="py-20 px-6 bg-white">
+
+        <div
+            class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+            <!-- Left Image -->
+
+            <div>
+
+                <img
+                    src="Mine.jpeg"
+                    class="object-cover object-top rounded-3xl shadow-2xl hover:scale-105 duration-500 mx-auto">
+
+            </div>
+
+            <!-- Right Content -->
+
+            <div>
+
+                <h2
+                    class="text-4xl font-extrabold text-gray-800">
+
+                    About Me
+
+                </h2>
+
+                <p
+                    class="text-gray-600 mt-6 text-lg leading-8">
+
+                    I am a passionate frontend web developer who
+                    loves creating responsive and interactive
+                    websites with modern UI designs.
+
+                    I enjoy learning new technologies and
+                    improving my development skills every day.
+
+                </p>
+
+                <button
+                    class="bg-blue-600 text-white px-6 py-3 rounded-xl mt-8 hover:bg-blue-700 duration-300">
+
+                    Read More
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= SKILLS SECTION ================= -->
+
+    <section id="skills"
+        class="py-20 px-6 bg-gray-100">
+
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Heading -->
+
+            <div class="text-center mb-14">
+
+                <h2
+                    class="text-4xl font-extrabold text-gray-800">
+
+                    My Skills
+
+                </h2>
+
+                <p
+                    class="text-gray-600 mt-4 text-lg">
+
+                    Technologies I use for web development.
+
+                </p>
+
+            </div>
+
+            <!-- Cards -->
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Card 1 -->
+
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-xl text-center hover:-translate-y-3 hover:shadow-2xl duration-300">
+
+                    <div class="text-5xl mb-5">
+                        🌐
+                    </div>
+
+                    <h3
+                        class="text-2xl font-bold text-gray-800">
+
+                        HTML
+
+                    </h3>
+
+                    <p
+                        class="text-gray-600 mt-4 leading-7">
+
+                        Creating structured and semantic
+                        webpages efficiently.
+
+                    </p>
+
+                </div>
+
+                <!-- Card 2 -->
+
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-xl text-center hover:-translate-y-3 hover:shadow-2xl duration-300">
+
+                    <div class="text-5xl mb-5">
+                        🎨
+                    </div>
+
+                    <h3
+                        class="text-2xl font-bold text-gray-800">
+
+                        CSS
+
+                    </h3>
+
+                    <p
+                        class="text-gray-600 mt-4 leading-7">
+
+                        Designing modern responsive
+                        user interfaces beautifully.
+
+                    </p>
+
+                </div>
+
+                <!-- Card 3 -->
+
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-xl text-center hover:-translate-y-3 hover:shadow-2xl duration-300">
+
+                    <div class="text-5xl mb-5">
+                        ⚡
+                    </div>
+
+                    <h3
+                        class="text-2xl font-bold text-gray-800">
+
+                        Tailwind CSS
+
+                    </h3>
+
+                    <p
+                        class="text-gray-600 mt-4 leading-7">
+
+                        Building fast utility-first
+                        responsive modern websites.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+
+    <section id="contact"
+        class="bg-gradient-to-r from-rose-700 to-pink-700 py-20 text-white">
+
+        <div class="max-w-4xl mx-auto text-center px-6">
+
+            <h2
+                class="text-4xl md:text-5xl font-extrabold">
+
+                Let's Work Together
+
+            </h2>
+
+            <p
+                class="mt-6 text-lg text-gray-200 leading-8">
+
+                Interested in creating modern websites or
+                collaborating on projects? Let's connect!
+
+            </p>
+
+            <button
+                onclick="showMessage()"
+                class="bg-yellow-400 text-black px-8 py-4 rounded-2xl font-bold mt-8 hover:scale-105 hover:bg-yellow-300 duration-300 shadow-xl">
+
+                Contact Me
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer
+        class="bg-slate-900 text-gray-300 py-10 text-center">
+
+        <h2
+            class="text-3xl font-extrabold text-white">
+
+            My Portfolio
+
+        </h2>
+
+        <p class="mt-4 text-gray-400">
+
+            Modern Responsive Portfolio using Tailwind CSS
+
+        </p>
+
+        <div class="flex justify-center gap-8 mt-6">
+
+            <a href="#"
+                class="hover:text-white duration-300">
+                Facebook
+            </a>
+
+            <a href="#"
+                class="hover:text-white duration-300">
+                Instagram
+            </a>
+
+            <a href="#"
+                class="hover:text-white duration-300">
+                LinkedIn
+            </a>
+
+        </div>
+
+        <p class="mt-8 text-sm text-gray-500">
+
+            © 2026 Portfolio UI | All Rights Reserved
+
+        </p>
+
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // ACTIVE NAVBAR
+
+        let menus = document.querySelectorAll(".menu");
+
+        menus.forEach(function (menu) {
+
+            menu.addEventListener("click", function () {
+
+                menus.forEach(item =>
+                    item.classList.remove("text-blue-400"));
+
+                menu.classList.add("text-blue-400");
+
+            });
+
+        });
+
+        // DARK MODE
+
+        document.getElementById("darkbtn")
+            .addEventListener("click", function () {
+
+                document.body.classList.toggle("bg-gray-900");
+                document.body.classList.toggle("text-white");
+
+            });
+
+        // BUTTON MESSAGE
+
+        function showMessage() {
+
+            alert("Thank you for visiting my portfolio!");
+
+        }
+
+    </script>
+
+</body>
+</html>
