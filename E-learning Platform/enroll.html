@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-300">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Application - PRASANKTA</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <script src="theme-config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link class="js-meta-tag" rel="icon" href="Images/prasankta.jpeg" type="Image/jpg">
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <script>
+        let user = JSON.parse(localStorage.getItem("loginuser"));
+        if(!user) { 
+            window.location.href = "login.html"; 
+        }
+    </script>
+
+    <nav class="bg-gradient-to-r from-teal-500 to-cyan-600 dark:from-slate-900 dark:to-cyan-950 text-white border-b border-gray-100 dark:border-slate-800 shadow-sm sticky top-0 z-50 transition-colors duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="Images/prasankta.jpeg" alt="PRASANKTA Logo" class="h-14 w-auto rounded-lg">
+                <span class="text-sm font-bold block text-cyan-950 dark:text-cyan-200 transition-colors">Welcome to Prasankta!</span>
+            </div>
+            <ul class="flex gap-6 text-sm items-center font-medium">
+                <li><a href="home.html" class="hover:text-white dark:hover:text-cyan-400 transition text-cyan-950 dark:text-cyan-200 font-bold">Home</a></li>
+                <li><a href="cart.html" class="hover:text-white dark:hover:text-cyan-400 transition text-cyan-950 dark:text-cyan-200 font-bold">Cart</a></li>
+                <li>
+                    <button class="bg-white text-gray-700 dark:bg-slate-800 dark:text-gray-200 text-xs px-3 py-1.5 rounded border border-gray-300 dark:border-slate-700 transition font-semibold" id="dbtn">
+                        Dark Mode
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="max-w-4xl mx-auto py-12 px-6">
+        <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-xl p-8 border border-gray-100 dark:border-slate-800 transition-colors duration-300">
+            <h1 class="text-3xl font-extrabold text-cyan-800 dark:text-cyan-400 mb-6">Course Enrollment Application</h1>
+            
+            <div id="coursePreviewAlert" class="mb-8 bg-teal-50 dark:bg-slate-800/40 p-6 rounded-xl border border-teal-100 dark:border-slate-800 transition-colors duration-300">
+                <h3 class="text-lg font-bold text-teal-800 dark:text-teal-400 mb-3">Selected Courses Summary:</h3>
+                <div id="selectedCoursesList" class="space-y-2 text-sm text-gray-700 dark:text-gray-300"></div>
+                
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-t border-teal-200 dark:border-slate-700 mt-4 pt-4 gap-4">
+                    <a href="cart.html" class="text-sm font-semibold text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 underline flex items-center gap-1">
+                        <i class="fa-solid fa-pen-to-square"></i> Change or Add More Courses
+                    </a>
+                    <span class="font-bold text-lg text-gray-800 dark:text-gray-100 self-end sm:self-auto">
+                        Total Amount: <span class="text-teal-600 dark:text-teal-400">₹<span id="totalPrice">0</span></span>
+                    </span>
+                </div>
+            </div>
+            
+            <form id="enrollmentForm" onsubmit="handleFormSubmission(event);" class="space-y-6">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Student Name</label>
+                        <input type="text" id="studentName" readonly class="w-full bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-slate-700 rounded-lg p-3 outline-none cursor-not-allowed">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
+                        <input type="email" id="studentEmail" readonly class="w-full bg-gray-100 dark:bg-slate-800 text-gray-500 dark:text-gray-400 border border-gray-300 dark:border-slate-700 rounded-lg p-3 outline-none cursor-not-allowed">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Password <span class="text-red-500">* (Min 6 digits)</span></label>
+                        <input type="password" id="primaryPass" placeholder="••••••••" minlength="6" required class="w-full bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-slate-700 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Repeat Password <span class="text-red-500">*</span></label>
+                        <input type="password" id="repeatPass" placeholder="••••••••" minlength="6" required class="w-full bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-slate-700 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Gender</label>
+                    <select id="studentGender" required class="w-full bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-slate-700 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition">
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Phone Number <span class="text-red-500">*</span></label>
+                    <div class="flex rounded-lg overflow-hidden border border-gray-300 dark:border-slate-700 focus-within:ring-2 focus-within:ring-teal-500 transition bg-white dark:bg-slate-950">
+                        <input type="tel" id="studentPhone" pattern="[0-9]{10}" maxlength="10" placeholder="Enter 10 digit phone number" required class="w-full p-3 bg-transparent outline-none text-gray-900 dark:text-gray-100">
+                        <button type="button" onclick="sendOTPToken()" class="group relative overflow-hidden bg-gradient-to-r from-teal-500 to-cyan-600 text-gray-900 font-bold px-5 text-sm whitespace-nowrap z-10 flex items-center justify-center rounded-md transition-all duration-300">
+                            <span class="absolute inset-0 border-4 border-transparent group-hover:border-cyan-900 transition-all duration-300 scale-95 group-hover:scale-100 rounded-md pointer-events-none z-20"></span>
+                            Send OTP
+                        </button>
+                    </div>
+                </div>
+
+                <div id="otpVerificationArea" class="hidden transition-all duration-300">
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Enter Verification Code <span class="text-red-500">*</span></label>
+                    <div class="flex rounded-lg overflow-hidden border border-gray-300 dark:border-slate-700 focus-within:ring-2 focus-within:ring-teal-500 transition bg-white dark:bg-slate-950">
+                        <input type="text" id="otpInput" maxlength="6" placeholder="Enter 6-digit OTP" class="w-full p-3 bg-transparent outline-none text-gray-900 dark:text-gray-100">
+                        <button type="button" onclick="verifyOTPToken()" class="bg-gray-800 hover:bg-gray-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-bold px-5 text-sm whitespace-nowrap transition-all duration-300">
+                            Verify Code
+                        </button>
+                    </div>
+                    <p id="otpStatusMsg" class="text-xs font-semibold mt-1 hidden"></p>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Languages Known</label>
+                    <input type="text" id="studentLanguages" placeholder="e.g. English, Bengali, Hindi" required class="w-full bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-slate-700 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Country</label>
+                        <select id="studentCountry" required class="w-full bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-slate-700 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition">
+                            <option value="" disabled selected>Select Country</option>
+                            <option value="India">India</option>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Canada">Canada</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">City</label>
+                        <input type="text" id="studentCity" placeholder="Enter your city" required class="w-full bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-slate-700 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Address</label>
+                    <textarea id="studentAddress" rows="3" placeholder="Enter your street address details..." required class="w-full bg-white dark:bg-slate-950 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-slate-700 rounded-lg p-3 outline-none focus:ring-2 focus:ring-teal-500 transition"></textarea>
+                </div>
+
+                <div class="border-t border-gray-100 dark:border-slate-800 pt-6">
+                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-3">
+                        Select Payment Method <span class="text-red-500">*</span>
+                    </label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <label class="flex items-center gap-3 p-4 border border-gray-300 dark:border-slate-700 rounded-lg cursor-pointer bg-white dark:bg-slate-950 hover:border-teal-500 transition">
+                            <input type="radio" name="paymentMethod" value="upi" required class="w-4 h-4 text-teal-600 focus:ring-teal-500">
+                            <span class="text-sm font-medium"><i class="fa-solid fa-mobile-screen text-teal-500 mr-1"></i> UPI / QR Code</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-4 border border-gray-300 dark:border-slate-700 rounded-lg cursor-pointer bg-white dark:bg-slate-950 hover:border-teal-500 transition">
+                            <input type="radio" name="paymentMethod" value="card" required class="w-4 h-4 text-teal-600 focus:ring-teal-500">
+                            <span class="text-sm font-medium"><i class="fa-solid fa-credit-card text-teal-500 mr-1"></i> Card Payment</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-4 border border-gray-300 dark:border-slate-700 rounded-lg cursor-pointer bg-white dark:bg-slate-950 hover:border-teal-500 transition">
+                            <input type="radio" name="paymentMethod" value="netbanking" required class="w-4 h-4 text-teal-600 focus:ring-teal-500">
+                            <span class="text-sm font-medium"><i class="fa-solid fa-building-columns text-teal-500 mr-1"></i> Net Banking</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="mt-8 space-y-4 border-t border-gray-100 dark:border-slate-800 pt-6">
+                    <label class="flex items-start gap-3 cursor-pointer text-sm text-gray-600 dark:text-gray-400 select-none">
+                        <input type="checkbox" id="check1" required class="w-4 h-4 mt-0.5 rounded text-teal-600 border-gray-300 dark:border-slate-700 focus:ring-teal-500">
+                        <span>I verify that all provided registration information matches university records.</span>
+                    </label>
+                    <label class="flex items-start gap-3 cursor-pointer text-sm text-gray-600 dark:text-gray-400 select-none">
+                        <input type="checkbox" id="check2" required class="w-4 h-4 mt-0.5 rounded text-teal-600 border-gray-300 dark:border-slate-700 focus:ring-teal-500">
+                        <span>I understand that I can only enroll in each unique subject once per active term.</span>
+                    </label>
+                </div>
+
+                <button type="submit" id="enrollBtn" disabled class="mt-8 w-full bg-green-600 hover:bg-green-700 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-xl transition duration-300 shadow-md opacity-50 cursor-not-allowed">
+                    Confirm Enrollment
+                </button>
+            </form>
+
+        </div>
+    </section>
+
+    <script src="theme-toggle.js"></script>
+
+    <script>
+        let generatedOTP = null;
+        let isPhoneVerified = false;
+
+        const courseMentorMap = {
+            "video editing & media": "Dr. P. Pramanik",
+            "graphic design & branding": "Nelly Rowen",
+            "digital fashion design": "Tomasz Jia"
+        };
+
+        function getUserKey(baseKey) {
+            let sessionUser = JSON.parse(localStorage.getItem("loginuser"));
+            if (sessionUser && sessionUser.email) {
+                return `${baseKey}_${sessionUser.email.trim().toLowerCase()}`;
+            }
+            return baseKey;
+        }
+
+        function syncAndMergeCourses() {
+            let incomingCart = JSON.parse(localStorage.getItem(getUserKey("orderCart"))) || [];
+            let currentEnrollmentList = JSON.parse(localStorage.getItem(getUserKey("enrollment_list_persistent"))) || [];
+
+            let incomingNames = incomingCart.map(c => c.name.trim().toLowerCase());
+
+            currentEnrollmentList = currentEnrollmentList.filter(course => {
+                let isIncoming = incomingNames.includes(course.name.trim().toLowerCase());
+                let wasTrashedLocally = (course.status === "removed");
+                return isIncoming || wasTrashedLocally;
+            });
+
+            incomingCart.forEach(incomingCourse => {
+                let matchFound = currentEnrollmentList.find(c => c.name.trim().toLowerCase() === incomingCourse.name.trim().toLowerCase());
+                if (!matchFound) {
+                    currentEnrollmentList.push(incomingCourse);
+                } else if (matchFound.status === "removed") {
+                    matchFound.status = "active";
+                }
+            });
+
+            localStorage.setItem(getUserKey("enrollment_list_persistent"), JSON.stringify(currentEnrollmentList));
+        }
+
+        function renderCourseSummary() {
+            let selectedCourses = JSON.parse(localStorage.getItem(getUserKey("enrollment_list_persistent"))) || [];
+            let listContainer = document.getElementById("selectedCoursesList");
+            let runningTotal = 0;
+
+            if (listContainer) {
+                listContainer.innerHTML = "";
+
+                if (selectedCourses.length === 0) {
+                    listContainer.innerHTML = "<p class='text-red-500 font-semibold text-center py-2'>No courses selected. Please click change courses above to choose subjects.</p>";
+                    document.getElementById("totalPrice").innerText = 0;
+                    return;
+                }
+
+                selectedCourses.forEach((course, index) => {
+                    const isRemoved = course.status === "removed";
+
+                    if (!isRemoved) {
+                        runningTotal += Number(course.price);
+                    }
+
+                    // MODIFIED: Visual text row element string tracking block completely omitted here
+                    listContainer.innerHTML += `
+                        <div class="flex justify-between items-start border-b border-gray-100 dark:border-slate-800/40 pb-3 pt-1 transition-all ${isRemoved ? 'opacity-40 line-through text-gray-400 dark:text-gray-600' : ''}">
+                            <div class="flex flex-col">
+                                <span class="font-medium ${isRemoved ? 'text-gray-400' : 'text-gray-800 dark:text-gray-200'}">
+                                    <i class="fa-solid fa-book-bookmark text-xs ${isRemoved ? 'text-gray-400' : 'text-teal-500'} mr-2"></i> 
+                                    ${course.name} ${isRemoved ? ' <span class="text-xs font-bold text-orange-500 italic ml-2">(Sent Back to Cart)</span>' : ''}
+                                </span>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="font-semibold ${isRemoved ? 'text-gray-400' : 'text-teal-600 dark:text-teal-400'}">
+                                    ₹${isRemoved ? '0' : course.price}
+                                </span>
+                                <button type="button" onclick="toggleCourseSelection(${index})" class="${isRemoved ? 'text-green-500 hover:text-green-700' : 'text-red-500 hover:text-red-700'} transition duration-150">
+                                    <i class="fa-solid ${isRemoved ? 'fa-rotate-left' : 'fa-trash-can'} text-sm"></i>
+                                </button>
+                            </div>
+                        </div>`;
+                });
+                
+                document.getElementById("totalPrice").innerText = runningTotal;
+            }
+        }
+
+        function toggleCourseSelection(index) {
+            let selectedCourses = JSON.parse(localStorage.getItem(getUserKey("enrollment_list_persistent"))) || [];
+            let currentCartItems = JSON.parse(localStorage.getItem(getUserKey("cart"))) || [];
+            
+            let targetCourse = selectedCourses[index];
+
+            if (targetCourse.status === "removed") {
+                targetCourse.status = "active";
+                currentCartItems = currentCartItems.filter(course => course.name !== targetCourse.name);
+            } else {
+                targetCourse.status = "removed";
+                
+                let alreadyInCart = currentCartItems.some(course => course.name === targetCourse.name);
+                if (!alreadyInCart) {
+                    currentCartItems.push({ 
+                        name: targetCourse.name, 
+                        price: targetCourse.price 
+                    });
+                }
+            }
+            
+            localStorage.setItem(getUserKey("enrollment_list_persistent"), JSON.stringify(selectedCourses));
+            localStorage.setItem(getUserKey("cart"), JSON.stringify(currentCartItems));
+            renderCourseSummary();
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            let sessionUser = JSON.parse(localStorage.getItem("loginuser"));
+            if(sessionUser) {
+                document.getElementById("studentName").value = sessionUser.name || "PRAGNA PRAMANIK";
+                document.getElementById("studentEmail").value = sessionUser.email || "pragna@gmail.com";
+            }
+
+            syncAndMergeCourses();
+            renderCourseSummary();
+
+            const check2 = document.getElementById("check2");
+            const enrollBtn = document.getElementById("enrollBtn");
+
+            if (check2 && enrollBtn) {
+                check2.addEventListener("change", function() {
+                    if (this.checked) {
+                        enrollBtn.removeAttribute("disabled");
+                        enrollBtn.classList.remove("opacity-50", "cursor-not-allowed");
+                    } else {
+                        enrollBtn.setAttribute("disabled", "true");
+                        enrollBtn.classList.add("opacity-50", "cursor-not-allowed");
+                    }
+                });
+            }
+        });
+
+        function sendOTPToken() {
+            const phone = document.getElementById('studentPhone').value.trim();
+            if(/^[0-9]{10}$/.test(phone)) {
+                generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+                
+                const otpArea = document.getElementById("otpVerificationArea");
+                otpArea.classList.remove("hidden");
+                
+                const statusMsg = document.getElementById("otpStatusMsg");
+                statusMsg.classList.add("hidden");
+                
+                alert("Verification code dispatched successfully to: " + phone + "\nYour Application OTP is: " + generatedOTP);
+            } else {
+                alert("Alert: Invalid Phone Number! Please specify a complete 10-digit mobile number to receive your verification code.");
+            }
+        }
+
+        function verifyOTPToken() {
+            const enteredOtp = document.getElementById("otpInput").value.trim();
+            const statusMsg = document.getElementById("otpStatusMsg");
+            
+            statusMsg.classList.remove("hidden");
+            
+            if (enteredOtp === generatedOTP && generatedOTP !== null) {
+                isPhoneVerified = true;
+                statusMsg.innerText = "OTP Verification Successful!";
+                statusMsg.className = "text-xs font-semibold mt-1 text-green-600 dark:text-green-400";
+                document.getElementById("studentPhone").setAttribute("readonly", "true");
+                document.getElementById("otpInput").setAttribute("readonly", "true");
+            } else {
+                isPhoneVerified = false;
+                statusMsg.innerText = "Error: Invalid OTP code. Please match values correctly.";
+                statusMsg.className = "text-xs font-semibold mt-1 text-red-500";
+            }
+        }
+
+        function handleFormSubmission(event) {
+            event.preventDefault();
+
+            const primaryPass = document.getElementById("primaryPass").value;
+            const repeatPass = document.getElementById("repeatPass").value;
+            const phoneInput = document.getElementById("studentPhone").value.trim();
+
+            if (!isPhoneVerified) {
+                alert("Alert: Phone number validation required! Please prompt OTP generation and input verification match before submitting.");
+                return;
+            }
+
+            if (primaryPass.length < 6) {
+                alert("Alert: Password Secure Failure! Your password must be at least 6 characters long.");
+                return;
+            }
+
+            if (primaryPass !== repeatPass) {
+                alert("Alert: Validation Error! Password entries do not match.");
+                return;
+            }
+
+            if (!/^[0-9]{10}$/.test(phoneInput)) {
+                alert("Alert: Invalid Contact number! Phone number must be exactly 10 digits without symbols.");
+                return;
+            }
+
+        let currentPersistentItems = JSON.parse(localStorage.getItem(getUserKey("enrollment_list_persistent"))) || [];
+    let finalEnrolledCourses = currentPersistentItems.filter(course => course.status !== "removed");
+
+    if(finalEnrolledCourses.length === 0) {
+        alert("Alert: No active courses selected! Please restore at least one course before confirming enrollment.");
+        return;
+    }
+
+    let enrolledKey = getUserKey("enrolledCourses");
+    let previouslyEnrolled = JSON.parse(localStorage.getItem(enrolledKey)) || [];
+    
+    // Local Lookup Field Hydrator
+    const dashboardFieldHydrator = {
+        "video editing & media": { m: "Dr. P. Pramanik", lvl: "Advanced", les: "30h lessons", pct: 72 },
+        "graphic design & branding": { m: "Nelly Rowen", lvl: "Beginner", les: "16h lessons", pct: 80 },
+        "digital fashion design": { m: "Tomasz Jia", lvl: "Advanced", les: "24h lessons", pct: 50 }
+    };
+
+    finalEnrolledCourses.forEach(newCourse => {
+        let duplicateCheck = previouslyEnrolled.some(oldCourse => oldCourse.name.trim().toLowerCase() === newCourse.name.trim().toLowerCase());
+        if (!duplicateCheck) {
+            const standardKey = newCourse.name.trim().toLowerCase();
+            const metadata = dashboardFieldHydrator[standardKey] || { m: "Instructor", lvl: "Advanced", les: "24h lessons", pct: 50 };
+            
+            previouslyEnrolled.push({
+                name: newCourse.name,
+                price: newCourse.price,
+                m: metadata.m,
+                lvl: metadata.lvl,
+                les: metadata.les,
+                pct: metadata.pct
+            });
+        }
+    });
+
+    localStorage.setItem(enrolledKey, JSON.stringify(previouslyEnrolled));
+
+    alert("Enrollment and Payment successful! Welcome to your new classes.");
+    
+    localStorage.removeItem(getUserKey("orderCart"));
+    localStorage.removeItem(getUserKey("enrollment_list_persistent"));
+    window.location.href = "dashboard.html";
+}    
+    </script>
+</body>
+</html>

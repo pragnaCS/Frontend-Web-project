@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | PRASANKTA</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <script src="theme-config.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="Images/prasankta.jpeg" type="Image/jpg">
+</head>
+
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <nav class="bg-gradient-to-r from-teal-500 to-cyan-600 dark:from-slate-900 dark:to-cyan-950 text-cyan-900 dark:text-cyan-100 border-b border-gray-100 dark:border-slate-800 shadow-sm sticky top-0 z-50 transition-all duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-6 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <div class="flex items-center gap-3">
+                <img src="Images/prasankta.jpeg" alt="PRASANKTA Logo" class="h-14 w-auto object-contain rounded-lg">
+            </div>
+
+            <ul class="flex flex-wrap gap-6 text-sm items-center font-medium" id="nav-links">
+                <li><a href="home.html" class="menu hover:text-white dark:hover:text-cyan-400 transition text-cyan-950 dark:text-cyan-200 font-bold">Home</a></li>
+                <li>
+                    <button class="bg-gray-100 hover:bg-gray-300 text-gray-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-gray-200 text-xs px-3 py-1.5 rounded border border-gray-300 dark:border-slate-700 transition" id="dbtn">
+                        Dark Mode
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="h-[3px] bg-gradient-to-r from-teal-500 to-cyan-600 dark:from-teal-600 dark:to-cyan-700 w-full" id="nav-bottom-bar"></div>
+    </nav>
+    
+    <section class="relative overflow-hidden bg-gradient-to-r from-slate-900 via-cyan-900 to-teal-900 py-24 text-white">
+        <div class="absolute top-0 left-0 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-4xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6">Contact Us</h1>
+            <div class="flex justify-center gap-6 text-4xl mb-6">
+                <i class="fa-solid fa-headset"></i>
+                <i class="fa-solid fa-envelope"></i>
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <p class="text-lg md:text-xl text-cyan-100 max-w-2xl mx-auto">
+                Have questions about courses, payments, certificates, or technical issues?
+                Our team is ready to help you anytime.
+            </p>
+        </div>
+    </section>
+
+<section class="max-w-7xl mx-auto px-6 py-12">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+        <!-- ================= Left Side : Query Form ================= -->
+
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-xl border dark:border-slate-800">
+
+            <h2 class="text-3xl font-bold text-center mb-8 text-cyan-700 dark:text-cyan-300">
+                Send Your Query
+            </h2>
+
+            <form id="contactForm">
+
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter phone number"
+                        class="w-full p-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block mb-2 font-medium">Query Type</label>
+
+                    <select id="queryType"
+                        class="w-full p-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800">
+
+                        <option>Course Related</option>
+                        <option>Payment Issue</option>
+                        <option>Technical Problem</option>
+                        <option>Certificate Issue</option>
+                        <option>Other</option>
+
+                    </select>
+                </div>
+
+                <div class="mb-5">
+                    <label class="block mb-2 font-medium">Message</label>
+
+                    <textarea rows="5" id="message"
+                        class="w-full p-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800"
+                        placeholder="Describe your issue..."></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full py-3 bg-cyan-600 hover:bg-cyan-800 text-white rounded-lg font-bold transition">
+
+                    Submit Query
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- ================= Right Side : Review ================= -->
+
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-xl border dark:border-slate-800">
+
+            <h2 class="text-3xl font-bold text-center mb-8 text-cyan-700 dark:text-cyan-300">
+
+                Submit Your Review
+
+            </h2>
+
+            <input type="text"
+                id="studentName"
+                placeholder="Enter Your Name"
+                class="w-full p-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 mb-5">
+
+            <div class="flex justify-center gap-2 mb-6">
+
+                <span class="star text-4xl cursor-pointer text-gray-400" data-value="1">★</span>
+                <span class="star text-4xl cursor-pointer text-gray-400" data-value="2">★</span>
+                <span class="star text-4xl cursor-pointer text-gray-400" data-value="3">★</span>
+                <span class="star text-4xl cursor-pointer text-gray-400" data-value="4">★</span>
+                <span class="star text-4xl cursor-pointer text-gray-400" data-value="5">★</span>
+
+            </div>
+
+            <textarea
+                id="reviewInput"
+                rows="9"
+                placeholder="Share your learning experience..."
+                class="w-full p-3 rounded-lg border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-800 mb-5"></textarea>
+
+            <button
+                onclick="submitReview()"
+                class="w-full py-3 bg-cyan-600 hover:bg-cyan-800 text-white rounded-lg font-bold transition">
+
+                Submit Review
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<div class="bg-white text-center dark:bg-slate-900 p-8 rounded-xl shadow-lg border border-transparent dark:border-slate-800 transition-colors duration-300">
+
+    <h2 class="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-100">
+        Get In Touch
+    </h2>
+
+    <div class="space-y-8">
+
+        <!-- Address -->
+        <div class="flex flex-col items-center text-center">
+            <i class="fa-solid fa-location-dot text-3xl text-cyan-600 dark:text-cyan-400 mb-3"></i>
+
+            <h3 class="font-bold text-lg text-gray-800 dark:text-gray-200">
+                Address
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-400">
+                College Street, West Bengal, India
+            </p>
+        </div>
+
+        <!-- Email -->
+        <div class="flex flex-col items-center text-center">
+            <i class="fa-solid fa-envelope text-3xl text-cyan-600 dark:text-cyan-400 mb-3"></i>
+
+            <h3 class="font-bold text-lg text-gray-800 dark:text-gray-200">
+                Email
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-400">
+                prasankta@elearning.com
+            </p>
+        </div>
+
+        <!-- Phone -->
+        <div class="flex flex-col items-center text-center">
+            <i class="fa-solid fa-phone text-3xl text-cyan-600 dark:text-cyan-400 mb-3"></i>
+
+            <h3 class="font-bold text-lg text-gray-800 dark:text-gray-200">
+                Phone
+            </h3>
+
+            <p class="text-gray-600 dark:text-gray-400">
+                +91 9876543210
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Social Media -->
+    <div class="mt-10">
+
+        <h3 class="font-bold text-lg mb-5 text-gray-800 dark:text-gray-200">
+            Follow Us
+        </h3>
+
+        <div class="flex justify-center gap-4">
+
+            <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-md">
+                <i class="fab fa-facebook-f w-5 h-5 flex items-center justify-center"></i>
+            </a>
+
+            <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-md">
+                <i class="fab fa-instagram w-5 h-5 flex items-center justify-center"></i>
+            </a>
+
+            <a href="#" class="bg-green-600 text-white p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-md">
+                <i class="fab fa-whatsapp w-5 h-5 flex items-center justify-center"></i>
+            </a>
+
+            <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:scale-110 transition-transform duration-300 shadow-md">
+                <i class="fab fa-youtube w-5 h-5 flex items-center justify-center"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <footer class="bg-gray-100 text-gray-700 dark:bg-[#181A1B] dark:text-[#A8A095] pt-12 pb-6 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-6 text-center text-xs">
+            <p>Copyright 2026 © <span class="text-emerald-600 dark:text-emerald-400 font-semibold uppercase tracking-wide">prasankta e-learning platform</span> | All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="theme-toggle.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e){
+            e.preventDefault();
+
+            let phone = document.getElementById("phone").value.trim();
+            let queryType = document.getElementById("queryType").value;
+            let message = document.getElementById("message").value.trim();
+
+            if (!phone || !message) {
+                alert("Please fill in all fields before submitting.");
+                return;
+            }
+
+            let query = {
+                phone: phone,
+                queryType: queryType,
+                message: message
+            };
+
+            let allQueries = JSON.parse(localStorage.getItem("queries")) || [];
+            allQueries.push(query);
+            localStorage.setItem("queries", JSON.stringify(allQueries));
+
+            alert("Your query has been submitted successfully!");
+            document.getElementById("contactForm").reset();
+            window.location.href = "home.html";
+        });
+
+        let selectedRating = 0;
+        const stars = document.querySelectorAll(".star");
+
+        stars.forEach(star => {
+            star.addEventListener("click", function () {
+                selectedRating = Number(this.dataset.value);
+                stars.forEach(s => {
+                    s.classList.remove("text-yellow-400");
+                    s.classList.add("text-gray-400");
+                });
+
+                for (let i = 0; i < selectedRating; i++) {
+                    stars[i].classList.remove("text-gray-400");
+                    stars[i].classList.add("text-yellow-400");
+                }
+            });
+        });
+
+        function getReviews() {
+            let reviews = JSON.parse(localStorage.getItem("reviews"));
+            if (!reviews) {
+                reviews = [
+                    {
+                        name: "Rahul Sharma",
+                        review: "Excellent platform. The courses are easy to understand and very helpful.",
+                        rating: 5
+                    },
+                    {
+                        name: "Priya Das",
+                        review: "Loved the learning experience. The instructors explain concepts clearly.",
+                        rating: 5
+                    },
+                    {
+                        name: "Amit Kumar",
+                        review: "Very useful courses and affordable pricing. Highly recommended.",
+                        rating: 4
+                    },
+                    {
+                        name: "Sneha Roy",
+                        review: "The course materials are well structured and easy to follow.",
+                        rating: 4
+                    }
+                ];
+                localStorage.setItem("reviews", JSON.stringify(reviews));
+            }
+            return reviews;
+        }
+
+        function submitReview() {
+            let name = document.getElementById("studentName").value.trim();
+            let review = document.getElementById("reviewInput").value.trim();
+            if (!name || !review || selectedRating == 0) {
+                alert("Please enter your name, review and rating.");
+                return;
+            }
+            let reviews = getReviews();
+            let existingReview = reviews.findIndex(r => r.name.toLowerCase() == name.toLowerCase());
+            if (existingReview != -1) {
+                reviews[existingReview].review = review;
+                reviews[existingReview].rating = selectedRating;
+            } else {
+                reviews.push({
+                    name: name,
+                    review: review,
+                    rating: selectedRating
+                });
+            }
+            localStorage.setItem("reviews", JSON.stringify(reviews));
+            alert("Review submitted successfully!");
+            window.location.href = "home.html#reviews";
+        }
+    </script>
+
+</body>
+</html>
